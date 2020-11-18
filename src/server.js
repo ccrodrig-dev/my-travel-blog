@@ -24,23 +24,23 @@ const withDb = async (operations, res) => {
 
 app.get('/api/articles/:name', async (req, res) =>{
         //temp removed
-        // withDb(async (db)=>{
-        //     const articleName = req.params.name;
-        //     console.log("Article name: "+articleName);
+        withDb(async (db)=>{
+            const articleName = req.params.name;
+            console.log("Article name: "+articleName);
     
-        //     const articleInfo = await db.collection('articles').findOne({name : articleName});
-        //     console.log("200");
-        //     res.status(200).json(articleInfo);
-        //     console.log("success");
-        // },res);  
+            const articleInfo = await db.collection('articles').findOne({name : articleName});
+            console.log("200");
+            res.status(200).json(articleInfo);
+            console.log("success");
+        },res);  
 
       // Temp
-      res.status(200).json({
-        "_id" : "5f98f7a8883a100e614f82fc",
-        "name" : "my-thoughts-on-resumes",
-        "upvotes" : 5,
-        "comments" : [{username: "MadB055", text:"This is the BEst zBlog Ever!"},{username: "MadB055", text:"This is the BEst zBlog Ever!"}]
-    })  
+    //   res.status(200).json({
+    //     "_id" : "5f98f7a8883a100e614f82fc",
+    //     "name" : "my-thoughts-on-resumes",
+    //     "upvotes" : 5,
+    //     "comments" : [{username: "MadB055", text:"This is the BEst zBlog Ever!"},{username: "MadB055", text:"This is the BEst zBlog Ever!"}]
+    // })  
 })
 
 app.post('/api/articles/:name/upvote', async(req,res)=> {
