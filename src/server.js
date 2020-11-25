@@ -5,42 +5,57 @@ import path from 'path';
 
 const app = express();
 
+
+//Firebase Intitializer
+let admin = require("firebase-admin");
+let serviceAccount = require("../dosoutdoors-firebase-adminsdk.json");
+admin.initializeApp({
+    credential: admin.credential.cert(serviceAccount),
+    databaseURL: "https://dosoutdoors-5f6f0.firebaseio.com"
+});
+
 app.use(express.static(path.join(__dirname, '/build')));
 app.use(bodyParser.json());
 
 const withDb = async (operations, res) => {
-    try{
-        console.log("INITIATING DB COMM");
-        const client = await MongoClient.connect('mongodb://localhost:27017', { useNewUrlParser : true});
-        const db = client.db('my-travel-blog');
+    let articleData = admin.database().ref('articles/');
+    articleData.on('value', (snapshot) =>{
+        const data = snapshot.val();
+        operations(data);
+        console.log(data);
+    });
+
     
-        await operations(db);
+    // try{
+
+    //     console.log("INITIATING DB COMM");
+    //     const client = await MongoClient.connect('mongodb://localhost:27017', { useNewUrlParser : true});
+    //     const db = client.db('my-travel-blog');
+    
+
+
+    //     await operations(db);
         
-        client.close();
-    }catch(error){
-        res.status(500).json({message: 'Error Connecting to db', error})
-    }
+    //     client.close();
+    // }catch(error){
+    //     res.status(500).json({message: 'Error Connecting to db', error})
+    // }
 }
 
 app.get('/api/articles/:name', async (req, res) =>{
-        //temp removed
         withDb(async (db)=>{
             const articleName = req.params.name;
             console.log("Article name: "+articleName);
-    
-            const articleInfo = await db.collection('articles').findOne({name : articleName});
+            const articles = await db
+
+            let articleInfo = articles.filter(obj => {
+                return obj.name === articleName;
+            })
+            console.log("The retrieved Object: "+JSON.stringify(articleInfo));
             console.log("200");
-            res.status(200).json(articleInfo);
+            res.status(200).json(articleInfo[0]);
             console.log("success");
         },res);  
-
-      // Temp
-    //   res.status(200).json({
-    //     "_id" : "5f98f7a8883a100e614f82fc",
-    //     "name" : "my-thoughts-on-resumes",
-    //     "upvotes" : 5,
-    //     "comments" : [{username: "MadB055", text:"This is the BEst zBlog Ever!"},{username: "MadB055", text:"This is the BEst zBlog Ever!"}]
-    // })  
 })
 
 app.post('/api/articles/:name/upvote', async(req,res)=> {
