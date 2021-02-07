@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/static/css/main.a80299cd.chunk.css",
+    "main.css": "/static/css/main.e6d557ac.chunk.css",
     "main.js": "/static/js/main.e50d5d34.chunk.js",
     "main.js.map": "/static/js/main.e50d5d34.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.b25eb265.js",
@@ -8,9 +8,9 @@
     "static/js/2.b0861def.chunk.js": "/static/js/2.b0861def.chunk.js",
     "static/js/2.b0861def.chunk.js.map": "/static/js/2.b0861def.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.7f16e738c89fb9e8b54f868fa50a6e2c.js": "/precache-manifest.7f16e738c89fb9e8b54f868fa50a6e2c.js",
+    "precache-manifest.49e4a7985d30d66dc04426fdac3b1401.js": "/precache-manifest.49e4a7985d30d66dc04426fdac3b1401.js",
     "service-worker.js": "/service-worker.js",
-    "static/css/main.a80299cd.chunk.css.map": "/static/css/main.a80299cd.chunk.css.map",
+    "static/css/main.e6d557ac.chunk.css.map": "/static/css/main.e6d557ac.chunk.css.map",
     "static/js/2.b0861def.chunk.js.LICENSE.txt": "/static/js/2.b0861def.chunk.js.LICENSE.txt",
     "static/media/index.css": "/static/media/ReenieBeanie-Regular.57cf6c5c.ttf",
     "static/media/pinterest-logo-icon.png": "/static/media/pinterest-logo-icon.0dee35c6.png"
@@ -18,7 +18,7 @@
   "entrypoints": [
     "static/js/runtime-main.b25eb265.js",
     "static/js/2.b0861def.chunk.js",
-    "static/css/main.a80299cd.chunk.css",
+    "static/css/main.e6d557ac.chunk.css",
     "static/js/main.e50d5d34.chunk.js"
   ]
 }
