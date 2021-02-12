@@ -5,7 +5,6 @@ import path from 'path';
 
 const app = express();
 
-const nonSPArouter = express.Router();
 
 //Firebase Intitializer
 let admin = require("firebase-admin");
@@ -17,40 +16,6 @@ admin.initializeApp({
 
 app.use(express.static(path.join(__dirname, '/build')));
 app.use(bodyParser.json());
-
-app.use(function(req,res,next) { 
-var ua = req.headers['user-agent'];
-if (/^(facebookexternalhit|twitterbot)/gi.test(ua)) {
-    nonSPArouter(req,res,next);
-} else {
-    next();
-} 
-});
-
-app.get('*', function(req, res) {
-    res.sendFile(path.join(__dirname + '/dist/index.html'));
-});
-
-nonSPArouter.get('/:projecturl', function(req,res) {
-  var maindomain = process.env.maindomain || config.maindomain;
-   console.log(req);
-//   Project.findOne({"projecturl": req.params.projecturl})
-//     .lean().select('title shortIntro basicData.imageurl   
-//     basicData.imageBuckets').exec(function(err, project) {
-    
-//     if (err) {
-//       res.render('bot', { url : maindomain+req.params.projecturl}); 
-//     }
-//     if (!err) {
-//        var imageurl = '';
-//        var cloudfrontimageurl = process.env.cloudfrontimageurl || config.cloudfrontimageurl;
-//        imageurl = cloudfrontimageurl + 'img/' + project.basicData.imageBuckets[0] + '/' + project.basicData.imageurl + '.jpg'; 
-//     }
-    res.render('bot', { url: "www.dosoutdoors.com/article/new-years-como", title: "Dos Outdoors Test Title", descriptionText: "Article Name", imageUrl : "https://images.app.goo.gl/PfFn3aPVTt8oZKqF8" }); 
-                
-    // });    
-    
-});
 
 const withDb = async (operations, res) => {
     let articleData = admin.database().ref('articles/');
