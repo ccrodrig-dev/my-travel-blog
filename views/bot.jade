@@ -1,0 +1,17 @@
+//bot.jade file included in our folder /views
+doctype html 
+html 
+ head 
+  title=title 
+  meta(property="og:title" name="twitter:title" content=title) 
+  meta(property="og:description" name="twitter:description" content=descriptionText) 
+  meta(property="og:url" name="twitter:url" content=url)  
+  meta(property="og:image" content=imageUrl) 
+  meta(property="og:type" content="article") 
+  meta(name="twitter:card" content="summary_large_image") 
+  meta(property="og:site_name" content="Epiloge.com")
+  meta(property="fb:app_id" content="[your app ID]")
+ body 
+  h1=title 
+  img(src= imageUrl)
+  p=descriptionText
