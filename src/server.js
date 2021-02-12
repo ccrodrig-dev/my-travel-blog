@@ -6,7 +6,7 @@ import path from 'path';
 const app = express();
 
 //Testing Jade
-const nonSPArouter = express.Router();
+// const nonSPArouter = express.Router();
 
 //Firebase Intitializer
 let admin = require("firebase-admin");
@@ -21,24 +21,24 @@ app.use(bodyParser.json());
 
 
 //Testing Jade
-app.use(function(req,res,next) { 
-var ua = req.headers['user-agent'];
-if (/^(facebookexternalhit|twitterbot)/gi.test(ua)) {
-    nonSPArouter(req,res,next);
-} else {
-    next();
-} 
-});
+// app.use(function(req,res,next) { 
+// var ua = req.headers['user-agent'];
+// if (/^(facebookexternalhit|twitterbot)/gi.test(ua)) {
+//     nonSPArouter(req,res,next);
+// } else {
+//     next();
+// } 
+// });
 
-app.get('*', function(req, res) {
-    res.sendFile(path.join(__dirname + '/dist/index.html'));
-});
+// app.get('*', function(req, res) {
+//     res.sendFile(path.join(__dirname + '/dist/index.html'));
+// });
 
-nonSPArouter.get('/:projecturl', function(req,res) {
-  var maindomain = process.env.maindomain || config.maindomain;
-   console.log(req);
-    res.render('bot', { url: "www.dosoutdoors.com/article/new-years-como", title: "Dos Outdoors Test Title", descriptionText: "Article Name", imageUrl : "https://images.app.goo.gl/PfFn3aPVTt8oZKqF8" }); 
-});
+// nonSPArouter.get('/:projecturl', function(req,res) {
+//   var maindomain = process.env.maindomain || config.maindomain;
+//    console.log(req);
+//     res.render('bot', { url: "www.dosoutdoors.com/article/new-years-como", title: "Dos Outdoors Test Title", descriptionText: "Article Name", imageUrl : "https://images.app.goo.gl/PfFn3aPVTt8oZKqF8" }); 
+// });
 
 const withDb = async (operations, res) => {
     let articleData = admin.database().ref('articles/');
