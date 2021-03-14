@@ -1,24 +1,24 @@
 {
   "files": {
-    "main.css": "/static/css/main.6e42cb73.chunk.css",
-    "main.js": "/static/js/main.39ec82ff.chunk.js",
-    "main.js.map": "/static/js/main.39ec82ff.chunk.js.map",
+    "main.css": "/static/css/main.caafc2f0.chunk.css",
+    "main.js": "/static/js/main.12abc275.chunk.js",
+    "main.js.map": "/static/js/main.12abc275.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.b25eb265.js",
     "runtime-main.js.map": "/static/js/runtime-main.b25eb265.js.map",
-    "static/js/2.459a4619.chunk.js": "/static/js/2.459a4619.chunk.js",
-    "static/js/2.459a4619.chunk.js.map": "/static/js/2.459a4619.chunk.js.map",
+    "static/js/2.f519a066.chunk.js": "/static/js/2.f519a066.chunk.js",
+    "static/js/2.f519a066.chunk.js.map": "/static/js/2.f519a066.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.0040fd8547ba7a5c870e2a89c3a46de8.js": "/precache-manifest.0040fd8547ba7a5c870e2a89c3a46de8.js",
+    "precache-manifest.8d3c8737065628f37c6b422f908794c2.js": "/precache-manifest.8d3c8737065628f37c6b422f908794c2.js",
     "service-worker.js": "/service-worker.js",
-    "static/css/main.6e42cb73.chunk.css.map": "/static/css/main.6e42cb73.chunk.css.map",
-    "static/js/2.459a4619.chunk.js.LICENSE.txt": "/static/js/2.459a4619.chunk.js.LICENSE.txt",
+    "static/css/main.caafc2f0.chunk.css.map": "/static/css/main.caafc2f0.chunk.css.map",
+    "static/js/2.f519a066.chunk.js.LICENSE.txt": "/static/js/2.f519a066.chunk.js.LICENSE.txt",
     "static/media/index.css": "/static/media/ReenieBeanie-Regular.57cf6c5c.ttf",
     "static/media/pinterest-logo-icon.png": "/static/media/pinterest-logo-icon.0dee35c6.png"
   },
   "entrypoints": [
     "static/js/runtime-main.b25eb265.js",
-    "static/js/2.459a4619.chunk.js",
-    "static/css/main.6e42cb73.chunk.css",
-    "static/js/main.39ec82ff.chunk.js"
+    "static/js/2.f519a066.chunk.js",
+    "static/css/main.caafc2f0.chunk.css",
+    "static/js/main.12abc275.chunk.js"
   ]
 }
