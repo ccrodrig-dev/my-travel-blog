@@ -8,6 +8,7 @@ const app = express();
 
 //Firebase Intitializer
 let admin = require("firebase-admin");
+
 let serviceAccount = require("../dosoutdoors-firebase-adminsdk.json");
 admin.initializeApp({
     credential: admin.credential.cert(serviceAccount),
@@ -16,6 +17,7 @@ admin.initializeApp({
 
 app.use(express.static(path.join(__dirname, '/build')));
 app.use(bodyParser.json());
+app.use(require('prerender-node').set('prerenderToken', 'DB9UBIkt4MgxZNj1nfll'));
 
 const withDb = async (operations, res) => {
     let articleData = admin.database().ref('articles/');
