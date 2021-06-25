@@ -15,9 +15,9 @@ admin.initializeApp({
     databaseURL: "https://dosoutdoors-5f6f0.firebaseio.com"
 });
 
+app.use(require('prerender-node').set('prerenderToken', 'DB9UBIkt4MgxZNj1nfll'));
 app.use(express.static(path.join(__dirname, '/build')));
 app.use(bodyParser.json());
-app.use(require('prerender-node').set('prerenderToken', 'DB9UBIkt4MgxZNj1nfll'));
 
 const withDb = async (operations, res) => {
     let articleData = admin.database().ref('articles/');
